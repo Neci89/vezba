@@ -1,0 +1,23 @@
+/* .jebem, .jebem-dva  {
+    width: 20%; 
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+} */
+
+
+
+.btn {
+    width: 50px;
+    height: 50px;
+}
+
+.main {
+    width: 100px;
+    height: 100px;
+    border: 5px solid black;
+    margin-top: 20px; 
+}
+
