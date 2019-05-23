@@ -114,56 +114,104 @@
 //   }
 // });
 
-const write = el => {
-  const list = document.querySelector(".list");
-  const markup = `<li id=${el.id}>${el.title}</li>`;
-  list.insertAdjacentHTML("beforeend", markup);
-};
+// const write = el => {
+//   const list = document.querySelector(".list");
+//   const markup = `<li id=${el.id}>${el.title}</li>`;
+//   list.insertAdjacentHTML("beforeend", markup);
+// };
 
-const bla = param => {
-  param.map(el => {
-    write(el);
-  });
-};
+// const bla = param => {
+//   param.map(el => {
+//     write(el);
+//   });
+// };
 
-const renderSinglePost = post => {
-  console.log(post.body)
-}
+// const renderSinglePost = post => {
+//   console.log(post.body)
+// }
+
+// const getSinglePost = async (id) => {
+
+//   const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
+//   try {
+//     const data = await response.json();
+//     renderSinglePost(data)
+//   }catch(err){
+//     console.log(err)
+//   }
+
+// }
+
+// const objId = document.querySelector("ul");
+
+// objId.addEventListener("click", () => {
+//   if (event.target.tagName === "LI") {
+//     getSinglePost(event.target.id)
+//   }
+// });
+
+// const api = async () => {
+//   const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+
+//   try {
+//     const data = await response.json();
+//     return bla(data);
+//   } catch (err) {
+//     // console.log(err)
+//   }
+// };
+
+// api();
+
+// let arr = [];
+
+// const apiCall = async () => {
+  
+  
+//   try {
+//     const response = await axios.get(
+//       "https://jsonplaceholder.typicode.com/posts"
+//     );
+//     return renderApi(response.data)
+
+//   } catch (err) {
+//     console.log(err, 'oov je err');
+//   }
+
+// };
+
+// apiCall();
+
+// const renderApi = (data) => {
+
+
+//   data.forEach(element => {
+//     document.querySelector('body').insertAdjacentHTML('beforeend', `<h1>${element.title}</h1>`)
+//   });
+//   arr = data
+//   return data
+
+// }
+
+// document.querySelector('body').addEventListener('click', (event) => {
+//   const el = event.target;
+//   if (el.childNodes[1]) {
+//     el.removeChild(el.childNodes[1])
+//   } else {
+//     const body = arr.filter(element => {
+//       if (element.title === el.innerText) {
+//         return element.body
+//       }
+//     });
+  
+//     el.insertAdjacentHTML('beforeend', `<p style="font-size: 12px;">${body[0].body}</p>`)
+//   }
+  
+// })
 
 
 
-const getSinglePost = async (id) => {
-  const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
-  try {
-    const data = await response.json();
-    renderSinglePost(data)
-  }catch(err){
-    console.log(err)
-  }
-
-}
 
 
 
-const objId = document.querySelector("ul");
 
-objId.addEventListener("click", () => {
-  if (event.target.tagName === "LI") {
-    getSinglePost(event.target.id)
-  }
-});
-
-
-
-const api = async () => {
-  const response = await fetch("https://jsonplaceholder.typicode.com/posts");
-
-  try {
-    const data = await response.json();
-    return bla(data);
-  } catch (err) {
-    // console.log(err)
-  }
-};
-
-api();
