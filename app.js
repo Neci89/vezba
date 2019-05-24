@@ -166,8 +166,7 @@
 // let arr = [];
 
 // const apiCall = async () => {
-  
-  
+
 //   try {
 //     const response = await axios.get(
 //       "https://jsonplaceholder.typicode.com/posts"
@@ -183,7 +182,6 @@
 // apiCall();
 
 // const renderApi = (data) => {
-
 
 //   data.forEach(element => {
 //     document.querySelector('body').insertAdjacentHTML('beforeend', `<h1>${element.title}</h1>`)
@@ -203,15 +201,57 @@
 //         return element.body
 //       }
 //     });
-  
+
 //     el.insertAdjacentHTML('beforeend', `<p style="font-size: 12px;">${body[0].body}</p>`)
 //   }
-  
+
 // })
+// let obj =  {
+//     "name":"John",
+//     "age":30,
+//     "cars":[ "Ford", "BMW", "Fiat" ]
+//     }
+
+//     const arr = [obj, obj, obj, obj];
+
+//     arr.forEach(el => {
+//       console.log(el)
+//     })
+
+const arr = [];
+const newArr = [];
+class Person {
+  constructor(name, age, cars) {
+    (this.name = name), (this.age = age), (this.cars = cars);
+  }
+}
+
+let smith = new Person("Zika", 25, "Bmw"),
+  lee = new Person("Milan", 12, "Yugo"),
+  kid = new Person("Aca", 99, "Volvo"),
+  red = new Person("Misa", 36, "Audi");
+arr.push(smith, lee, kid, red);
+// console.log(arr);
+
+const random = arr => {
+  return Math.floor(Math.random() * arr);
+};
+// console.log(random())
+
+const write = arg => {
+  const paragraf = document.querySelector(".list");
+  const markup = `<p>${arg}</p>`;
+  paragraf.insertAdjacentHTML("beforeend", markup);
+};
 
 
 
-
-
-
-
+const selectedEl = arr => {
+  const num = random(arr.length);
+  newArr.push(arr[num]);
+  arr.splice(num, 1);
+ 
+  console.log(Object.keys(newArr)) 
+}
+// prototype.sex = 'Jebem';
+selectedEl(arr);
